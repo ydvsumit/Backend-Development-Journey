@@ -53,4 +53,4 @@ writeFileSync(
 );
 
 console.log("done with the task");
-console.log("Starting new task");
+console.log("Starting next task");

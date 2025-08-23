@@ -33,11 +33,14 @@ readFile("../content/second.txt", "utf8", (err, data) => {
       "../content/result-async.txt",
       `Here is the result: ${test}, ${second}`,
       (err) => {
-        console.log(err);
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log("Done this asynchronous task");
       }
     );
-    console.log("Done this asynchronous task");
   });
 });
 
-console.log("starting new task");
+console.log("starting next task");
