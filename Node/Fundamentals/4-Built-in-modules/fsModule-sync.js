@@ -18,6 +18,9 @@ const { readFileSync, writeFileSync } = require("fs");
  * encoding => Node knows how to decode the file, generally we go with utf8, - need to provide encoding value
  */
 
+console.log(
+  "Synchronously starts the task with blocking nature while its complete this taks"
+);
 const first = readFileSync("../content/first.txt", "utf8");
 
 /**
@@ -48,3 +51,6 @@ writeFileSync(
   `Hey Node, here is the result of first & second file: ${first} & ${text}`,
   { flag: "a" }
 );
+
+console.log("done with the task");
+console.log("Starting new task");

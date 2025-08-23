@@ -1,5 +1,8 @@
 const { readFile, writeFile, read } = require("fs");
 
+console.log(
+  "Asynchronously starts the task with non-blocking nature that means it pick the task and doing task behind the scene and offload this task and take new task"
+);
 readFile("../content/first.txt", "utf8", (err, data) => {
   if (err) {
     console.log(err);
@@ -33,5 +36,8 @@ readFile("../content/second.txt", "utf8", (err, data) => {
         console.log(err);
       }
     );
+    console.log("Done this asynchronous task");
   });
 });
+
+console.log("starting new task");
