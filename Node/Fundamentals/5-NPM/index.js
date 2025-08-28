@@ -23,3 +23,20 @@ const _ = require("lodash");
 const items = [1, [2, [3, [4]]]];
 const newItems = _.flattenDeep(items);
 console.log(newItems);
+
+/**
+ * package.json :
+ * nodemon: It is a toll for nodejs that gonna watch our files and restart our application automatically whenever you make changes to your code.
+ * dependencies: These are the packages your app need to run in production.
+ *             - They're required when the app is actually running.
+ *             - If you deploy your app to a server, these packages will be installed.
+ * Syntax:  npm install <packageName>
+ *
+ * devDependencies: These are the package only needed during development, NOT in Production.
+ *                - They help you while writing, testing, or building your app.
+ *                - They are NOT required to run your app in production.
+ * Syntax: npm install <packageName> -D or npm install <packageName> --save-dev
+ *
+ * Uninstall Packages: you can uninstall any package that you want.
+ * Syntax: npm uninstall <packageName>
+ */
