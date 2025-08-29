@@ -1,4 +1,4 @@
-const { readFile, writeFile, read } = require("fs");
+const { readFile, writeFile } = require("fs");
 
 console.log(
   "Asynchronously starts the task with non-blocking nature that means it pick the task and doing task behind the scene and offload this task and take new task"
