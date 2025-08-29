@@ -25,7 +25,7 @@ const startTryCatch = async () => {
   try {
     const first = await getText("../1-Fundamentals/content/first.txt");
     const second = await getText("../1-Fundamentals/content/second.txt");
-    console.log(first & second);
+    console.log(first, second);
   } catch (error) {
     console.log(error);
   }
