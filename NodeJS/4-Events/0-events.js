@@ -19,6 +19,7 @@
  * Important Note :
  * 1. When we want to create something Custom then we need to extend the class.
  * 2. And if we simply wanted to emit an event as well as listen for it, then you can just create an instance from EventEmiiter.
+ * 3. Order matters in between listening event and emit an event. If we trigger emit event before listening it then it will ignore to listen the event
  */
 
 const EventEmitter = require("events"); // return a class
@@ -42,6 +43,7 @@ myEmmitter.emit("greet", "Sumit");
  * Note: above .on listener, it takes params in callback fn and the values of params are provided by our .emit after the event placeholder
  */
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Multiple Listeners : Both listeners will run in the order they were registered.
 myEmmitter.on("data", (msg) => {
   console.log(`Listener 1 received : ${msg}`);
@@ -53,6 +55,7 @@ myEmmitter.on("data", (msg) => {
 
 myEmmitter.emit("data", "Event-driven programming is awesome!");
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * We did not use .emit() manually (who has already an EventEmitter under the hood), because:
  * 1. fs.createReadStream() returns a Readable Stream, which is already an EventEmitter under the hood.

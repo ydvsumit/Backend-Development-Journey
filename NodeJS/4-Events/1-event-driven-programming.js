@@ -33,6 +33,7 @@ emitter.on("order", (item) => {
 // Emit event
 emitter.emit("order", "Pizza");
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * .once Listener :
  *                - Registers a one-time listener.
@@ -45,6 +46,7 @@ emitter.once("login", (user) => {
 emitter.emit("login", "Alice"); // Works
 emitter.emit("login", "Bob"); // Ignored
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Where Event-Driven Programming is used in Node.js?
 
 // 1. HTTP Server:
@@ -72,3 +74,17 @@ stream.on("data", (chunk) => {
 stream.on("end", () => {
   console.log("File read complete.");
 });
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Practice :
+const customEmitter = new EventEmitter();
+
+customEmitter.on("response", (name, id) => {
+  console.log(`Data recieved user ${name} with id: ${id}`);
+});
+
+customEmitter.on("response", (name, id) => {
+  console.log("Some other logic here");
+});
+
+customEmitter.emit("response", "Sumit", 1606);
