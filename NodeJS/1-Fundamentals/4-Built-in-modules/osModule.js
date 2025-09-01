@@ -20,3 +20,10 @@ const currentOS = {
 };
 
 console.log(currentOS);
+
+// Helps in monitoring system info and writing platform-independent code.
+console.log("OS Platform:", os.platform()); // win32, linux, darwin
+console.log("CPU Arch:", os.arch()); // x64, arm
+console.log("Free Memory:", os.freemem());
+console.log("Total Memory:", os.totalmem());
+console.log("Host Name:", os.hostname());

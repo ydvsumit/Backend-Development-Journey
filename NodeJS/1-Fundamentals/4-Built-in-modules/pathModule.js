@@ -52,3 +52,9 @@ console.log(absolute);
 console.log(path.resolve("/first", "second", "/third", "fourth.js"));
 // Output on a Unix-like system: /third/fourth.js
 // (because '/third' is treated as a new root)
+
+// return directory name
+console.log(path.dirname("../content/first.txt")); // ../content
+
+// returns file extension name
+console.log(path.extname("../content/first.txt")); // .txt
