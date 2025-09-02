@@ -1,44 +1,70 @@
 /**
- * Crypto: Provides cryptographic functions like hashing, encryption, decryption.
- * - Used in authentication (password hashing, JWT, OAuth, etc.).
- * 
- * What happens below:
- * 1. crypto.createHash('sha256'):
- *    - Builds a Hash object configured to use the SHA-256 algorithm (a fast, one-way hash).
- *    - You can see supported algorithms with crypto.getHashes().
- * 
- * 2. .update('mypassword'):
- *    - Feeds data into the hash.
- *    - You can call update() multiple times (streaming) with chunks: .update(part1).update(part2)….
- *    - When you pass a string, it defaults to UTF-8. You can pass a Buffer too.
- * 
- * 3.digest('hex'):
- *    - Finalizes the hash and returns the result.
- *    - Passing 'hex' gives a lowercase hex string; omit the arg to get a Buffer, or use 'base64' if you prefer compact text.
- *    - After digest() the Hash object is done; you can’t .update() it again.
-
-So hash becomes a 64-character hex string (32 bytes = 256 bits).
-Important: plain SHA-256 of a password is not suitable for storing passwords (see below).
-
+ * Crypto:
+ * crypto in Node.js is a built-in module that helps you work with security stuff like:
+ *  - Hashing → turning data into a fixed string (like a fingerprint). Example: storing passwords safely.
+ *  - Encryption / Decryption → locking and unlocking data so only the right people can read it.
+ *  - Random values → generating secure random numbers (like tokens or session IDs).
+ *
+ * In Short: crypto = your toolbox for security in Node.js.
+ *  - Hashing = fingerprint.
+ *  - Encryption = lock & key.
+ *  - RandomBytes = unique secure IDs.
  */
+
+// Basic
 const crypto = require("crypto");
 
-// Create a hash
+// Make a hash (like password fingerprint)
 const hash = crypto.createHash("sha256").update("mypassword").digest("hex");
-console.log("Hash:", hash);
+console.log(hash);
+
+// Make a secure random token
+const token = crypto.randomBytes(16).toString("hex");
+console.log(token);
+
+// -------------------------------Where crypto is used in real apps:----------------------------------------
+/**
+ * 1. Signup (store password safely)
+ *    - We never save the real password in the database ❌.
+ *    - Instead, we save a hash (fingerprint).
+ */
+
+// password user enters
+const password = "mypassword";
+
+// make a secure hash (sha256 here, bcrypt is usually better)
+const hashedPassword = crypto
+  .createHash("sha256")
+  .update(password)
+  .digest("hex");
+
+console.log("Saved in DB:", hashedPassword);
 
 /**
- * What happens below:
- * 1. crypto.randomBytes(16):
- *    - Returns 16 cryptographically secure random bytes (128 bits) from the OS (CSPRNG).
- *    - This is very different from Math.random()—which is not secure.
- *    - Use the async form crypto.randomBytes(size, cb) if you’re generating lots of randomness on a busy server to avoid blocking the event loop.
- *
- * 2. .toString('hex'):
- *    - Encodes the raw bytes as hex text.
- *    - 16 bytes → 32 hex characters.
- *    - Common uses: salts, IVs/nonces, API keys, one-time tokens.
+ * 2. Login (verify password):
+ *    When user logs in:
+ *    - Take entered password
+ *    - Hash it again
+ *    - Compare with DB
  */
-// Generate random bytes
-const randomBytes = crypto.randomBytes(16).toString("hex");
-console.log("Random:", randomBytes);
+
+const enteredPassword = "mypassword";
+const storedHash = "db_saved_hash_here"; // from signup
+
+const loginHash = crypto
+  .createHash("sha256")
+  .update(enteredPassword)
+  .digest("hex");
+
+if (loginHash === storedHash) {
+  console.log("✅ Login success");
+} else {
+  console.log("❌ Wrong password");
+}
+
+/**
+ * 3. Session Tokens / API Keys
+ * After login, you give the user a random secure token (like a digital key).
+ */
+const sessionToken = crypto.randomBytes(32).toString("hex");
+console.log("Session Token:", sessionToken);
