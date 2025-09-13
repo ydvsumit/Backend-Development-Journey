@@ -25,7 +25,7 @@
 const EventEmitter = require("events"); // return a class
 
 // Create an EventEmiiter instance
-const myEmmitter = new EventEmitter(); //custome Event
+const myEmmitter = new EventEmitter(); //custom Events
 
 // Register an event listener
 myEmmitter.on("greet", (name) => {
