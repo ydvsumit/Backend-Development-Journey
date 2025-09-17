@@ -5,6 +5,7 @@
  * 👉 Think of them as built-in helpers that Node.js provides by default.
  *
  * globals: In NodeJS, variables declared inside a file are not added to the global scope
+ *
  * __dirname -> return the absolute path of current directory
  * __filename -> retrun the absolute parth of current file (including filename)
  * require -> Function used to import modules
