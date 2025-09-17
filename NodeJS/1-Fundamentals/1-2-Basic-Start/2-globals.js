@@ -7,10 +7,10 @@
  * globals: In NodeJS, variables declared inside a file are not added to the global scope
  *
  * __dirname -> return the absolute path of current directory
- * __filename -> retrun the absolute parth of current file (including filename)
+ * __filename -> retrun the absolute path of current file (including filename)
  * require -> Function used to import modules
  * module & exports -> used to export and import code between files
- * process -> info about env where the program is being executed
+ * process -> info about env where the program is being executed OR process object is a global object that provides info about current NodeJS process
  * timers -> Work just like in browsers
  * console -> for logging output
  * Buffer -> Helps work with binary data.
