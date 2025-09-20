@@ -1,7 +1,7 @@
 /**
  * - Handles continuous flow of data (chunk by chunk) instead of loading everything at once.
  * - Efficient for large files, video/audio streaming.
- * - More about stream is in 5-Streams section
+ * - More about stream is in 6-Streams section and listen event (.on) in 5-Events
  */
 const fs = require("fs");
 
