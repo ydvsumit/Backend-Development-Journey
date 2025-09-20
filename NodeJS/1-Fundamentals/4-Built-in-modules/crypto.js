@@ -9,6 +9,26 @@
  *  - Hashing = fingerprint.
  *  - Encryption = lock & key.
  *  - RandomBytes = unique secure IDs.
+ *
+ * What is Hashing in Node.js?
+ * • Hashing is a one-way cryptographic process that transforms input data (like a password, file, or text) into a fixed-length string of random-looking characters using a special math function.
+ * • In Node.js, we usually do this with the built-in crypto module.
+ *
+ * ⚡ Key Points about Hashing:
+ *          • One-way process → You can’t “reverse” a hash to get the original data back.
+ *          • Fixed size output → No matter how big the input is, the hash size stays the same (e.g., SHA-256 gives 64 characters).
+ *          • Used for security → Commonly used to store passwords safely (we store the hash, not the real password).
+ *          • Fast comparison → Instead of comparing big text/files, we compare their hashes.
+ *
+ * Encryption in Node.js:
+ *                      - Encryption = locking your data with a secret key so only someone with the right key can unlock it.
+ * It’s a two-way process:
+ *                        - You encrypt (lock) the data before sending/storing.
+ *                        - The receiver decrypts (unlocks) it using the correct key.
+ *
+ * ⚡ Key Differences from Hashing:
+ *                                  - Hashing: one-way (you can’t get the original back).
+ *                                  - Encryption: two-way (you can encrypt → decrypt back to original).
  */
 
 // Basic
@@ -68,3 +88,27 @@ if (loginHash === storedHash) {
  */
 const sessionToken = crypto.randomBytes(32).toString("hex");
 console.log("Session Token:", sessionToken);
+
+/**
+ * 4. Encryption & Decryption
+ */
+
+// Secret key & algorithm
+const algorithm = "aes-256-cbc";
+const key = crypto.randomBytes(32); // Must be 32 bytes for aes-256
+const iv = crypto.randomBytes(16); // Initialization vector
+
+// Data to encrypt
+const message = "Hello, this is secret!";
+
+// Encrypt
+const cipher = crypto.createCipheriv(algorithm, key, iv);
+let encrypted = cipher.update(message, "utf-8", "hex");
+encrypted += cipher.final("hex");
+console.log("Encrypted:", encrypted);
+
+// Decrypt
+const decipher = crypto.createDecipheriv(algorithm, key, iv);
+let decrypted = decipher.update(encrypted, "hex", "utf-8");
+decrypted += decipher.final("utf-8");
+console.log("Decrypted:", decrypted);
