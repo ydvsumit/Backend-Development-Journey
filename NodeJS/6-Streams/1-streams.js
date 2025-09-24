@@ -23,6 +23,12 @@
  * 3. Duplex Stream - e.g.-> net.socket : Used to both read and write data sequentially.
  * 4. Transform Stream - e.g.-> zlib.createGzip() for compression: Duplex + Where data can be modified when writing or reading
  *
+ * 👉 In short:
+ *              • Readable → Input
+ *              • Writable → Output
+ *              • Duplex → Input + Output
+ *              • Transform → Input + Output + Modification
+ *
  * Note:
  * Streams extend event emitter class.
  * Which simply means, we can use events like data and end on streams.
