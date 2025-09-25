@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  align-items: left;
+  background: linear-gradient(
+    to top right,
+    rgb(245, 112, 194),
+    rgba(228, 126, 231, 0.288)
+  );
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 50px;
+  line-height: 0;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+}
+
+p,
+li {
+  text-align: left;
+  margin: 20px;
+  font-size: 25px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
