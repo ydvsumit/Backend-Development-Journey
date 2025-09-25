@@ -36,7 +36,7 @@ const fs = require("fs"); // imports File System module
 //process
 console.log(process.platform); // win32, linux, darwin
 console.log(process.cwd()); // current working directory
-console.log(process.env.USER); // environment variable
+console.log("env = ", process.env.USER); // environment variable
 
 //timers
 setTimeout(() => console.log("Hello after 2s"), 2000);
