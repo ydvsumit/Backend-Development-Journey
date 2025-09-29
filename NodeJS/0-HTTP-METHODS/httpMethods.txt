@@ -1,0 +1,30 @@
+■ What are HTTP Methods?
+  => HTTP methods (also called HTTP verbs) are a set of request types defined by the HTTP protocol. 
+     They tell the server what action the client (browser, mobile app, or API consumer) wants to perform on a given resource (like a user, product, or post).
+
+
+■ Most Common HTTP Methods:
+  => Here are the main ones you’ll use in APIs and web development:
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------
+      Method	                Use / Purpose	                                                                        Example     
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------    
+     1. GET	    -> Retrieve data from the server (read-only).	                                          -> GET /users → fetch all users
+     2. POST	  -> Send data to the server to create a new resource.	                                  -> POST /users → create a new user
+     3. PUT	    -> Update an existing resource (replace it fully).	                                    -> PUT /users/5 → replace user with ID=5
+     4. PATCH	  -> Update part of a resource (partial update).	                                        -> PATCH /users/5 → update only email of user 5
+     5. DELETE  -> Remove a resource from the server.	                                                  -> DELETE /users/5 → delete user with ID=5
+     6. HEAD	  -> Same as GET, but only fetches headers, not the body (useful for checking metadata).  -> HEAD /file.pdf
+     7. OPTIONS -> Ask the server which HTTP methods are allowed for a resource (often used in CORS).	  -> OPTIONS /users
+     8. TRACE	  -> Echoes the received request (used for debugging, rarely used in production).	        -> TRACE /test
+     9. CONNECT -> Establish a tunnel to the server (commonly used in HTTPS, proxies).	                -> CONNECT www.example.com:443
+
+✅ Why are they useful?
+      • They define intent (are we reading, creating, updating, or deleting?).
+      • Make APIs RESTful by mapping CRUD operations to methods:
+              ┼ Create → POST
+              ┼ Read → GET
+              ┼ Update → PUT/PATCH
+              ┼ Delete → DELETE
+
+■ By Default, browser perform a GET request.
+■ Also, Please visit this related to Computer Networking: https://en.wikipedia.org/wiki/Port_(computer_networking)

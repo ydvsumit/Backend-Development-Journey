@@ -1,6 +1,6 @@
 /**
  * Provides the EventEmitter class to handle events.
- * More about event in 5-Events Section
+ * More about event in 8-Events and EventEmitter Section
  */
 const EventEmitter = require("events");
 const customEmitter = new EventEmitter();

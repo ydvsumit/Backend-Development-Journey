@@ -1,0 +1,26 @@
+Before moving to Advance NodeJS, please visit ExpressJS folder, where you can learn about ExpressJS and Middleware.
+
+🔹 Express.js (Popular Framework):
+    • Setting up an Express server
+    • Middleware (built-in, custom, third-party)
+    • Routing
+    • Handling query params, route params, body
+    • Error handling
+    • Serving static files
+    • Express Router (modular routes)
+
+🔹 Advance NodeJS:
+    ■ Authentication & Security:
+      • Cookies & Sessions
+      • JSON Web Tokens (JWT)
+      • Password hashing (bcrypt, crypto)
+      • CORS in Node.js
+      • Helmet & rate limiting
+
+  ■ Advanced Topics:
+      • Clustering & Worker Threads
+      • Child Processes (spawn, fork, exec)
+      • Performance optimization (event loop blocking, async patterns)
+      • Error handling best practices
+      • Environment variables & .env files
+      • Logging (winston, pino)
