@@ -35,6 +35,8 @@
  *
  * ✅ In short:
  *             - app.use is used to add middleware that runs before route handlers. It helps with logging, authentication, parsing, serving static files, error handling, etc.
+ *
+ * 🔹 More about HTTP Methods, please visit first 0-HTTP-METHODS file in NodeJS Section
  */
 const express = require("express"); // Here, we're getting a function back from express
 
@@ -44,7 +46,63 @@ const app = express(); // Here, we just invoke it and we right away have our ser
 // const app = require("express")();
 
 app.get("/", (req, res) => {
-  res.send("Home Page");
+  res.status(200).send("Home Page");
+});
+
+app.get("/about", (req, res) => {
+  res.status(200).send("About Page");
+});
+
+/**
+ * • I want to handle 404 as well, so if the user comes to my server and tries to access a resource that doesn't exist, what I'm gonna send back.
+ * • as we know, by default browser will return 404 with GET if url is invalid, then I can setup my own 404 response
+ *-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * 🔹 What is app.all()?
+ *    • app.all() is used to handle all HTTP methods (GET, POST, PUT, PATCH, DELETE, etc.) for a given path.
+ *    • Think of it as a catch-all handler for a route.
+ *    • It’s useful when you want the same logic to run regardless of the HTTP method.
+ *
+ * 🔹 Syntax:   app.all(path, callback)
+ *    • path → the route (like /users, *, etc.)
+ *    • callback → middleware/handler function (req, res, next)
+ *
+ * 🔹 Difference from app.use()
+ *    • app.use() → applies to all routes/methods (optionally restricted by path).
+ *    • app.all() → applies to a specific route, but all HTTP methods.
+ *
+ * ✅ In short:
+ *              • app.all() is used when you want to catch all HTTP methods for a particular route. Often used for logging, authentication checks, or error handlers on a route level.
+ *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * What is next in Express?
+ * • In ExpressJS, every middleware or route handler function has this signature: (req, res, next) => { ... }
+ * Here:
+ *      • req → the request object
+ *      • res → the response object
+ *      • next → a function that, when called, passes control to the next middleware or route handler in the stack
+ *
+ * 🔹 Why do we need next()?
+ *    • Express executes middleware/handlers in order
+ *    • If you don’t call next(), the request will get “stuck” and never move forward.
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * 🔹 Meaning of * in app.all('*', ...) : the * in Express routes is called a wildcard (or "catch-all").
+ *    • * matches any path.
+ *    • Combined with app.all(), it means:
+ *                                        👉 Handle all HTTP methods, for any route.
+ *    So, it’s like a global fallback when no other route matches.
+ *
+ * 🔹 Difference: * vs Middleware
+ *    • app.use((req,res)=>{}) → also handles all paths & methods (acts like global middleware).
+ *    • app.all('*', ...) → explicitly says: “If no other route matched, this is the final handler for all methods.
+ *                          (commonly used for 404 pages).
+ *
+ * ✅ In short:
+ *              - in app.all('*', ...) = catch everything that wasn’t handled earlier.
+ *              - It’s Express’s way to create a default/fallback route.
+ */
+
+// all method: I am going to use all method because user can do multiple things on a server and I wanna cover them all, not just getting the resource or inserting the resource or whatever, I wanna cover them all.
+app.all("*", (req, res) => {
+  res.status(404).send("<h1>Resource Not Found</h1>");
 });
 
 app.listen(5000, () => {
