@@ -91,5 +91,5 @@ app.listen(5000, () => {
  * BONUS:
  * we have 2 options to serve static files:
  *  1. Adding index.html to static assets that means we don't need to write app.get() specifically
- *  2. SSR (Server Set Rendering) - Template Engine
+ *  2. SSR (Server Side Rendering) - Template Engine
  */
