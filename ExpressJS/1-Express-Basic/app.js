@@ -100,8 +100,24 @@ app.get("/about", (req, res) => {
  *              - It’s Express’s way to create a default/fallback route.
  */
 
+/**
+ * ■ PathError [TypeError]: Missing parameter name at index 1: *
+ *    - That comes from path-to-regexp, which Express uses internally to parse route paths.
+ *    - This error means Express is choking on your app.all("*", ...).
+ *
+ * 🔹 Why it happens ?
+ *        - In Express v5 (beta), the router became stricter about paths, and a bare "*" is no longer valid.
+ *    • In Express v4:
+ *        - app.all("*", handler)   // ✅ works
+ *    • In Express v5:
+ *        - app.all("*", handler)   // ❌ throws PathError
+ *    Because "*" is now treated as an invalid path pattern.
+ *
+ * ✅ Fix:
+ *        - Use a regex or /* or given below pattern instead of "*".
+ */
 // all method: I am going to use all method because user can do multiple things on a server and I wanna cover them all, not just getting the resource or inserting the resource or whatever, I wanna cover them all.
-app.all("*", (req, res) => {
+app.all(/.*/, (req, res) => {
   res.status(404).send("<h1>Resource Not Found</h1>");
 });
 
