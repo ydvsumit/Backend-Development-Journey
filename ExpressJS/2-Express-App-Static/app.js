@@ -86,3 +86,10 @@ app.listen(5000, () => {
  *          • Middleware functions → things that process requests (like logging, parsing, or serving static files).
  * 👉 express.static() is just a built-in middleware factory function, not tied to one specific app object.
  */
+
+/**
+ * BONUS:
+ * we have 2 options to serve static files:
+ *  1. Adding index.html to static assets that means we don't need to write app.get() specifically
+ *  2. SSR (Server Set Rendering) - Template Engine
+ */
