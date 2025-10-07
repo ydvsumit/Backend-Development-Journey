@@ -21,6 +21,7 @@
  *      6. app.use        -> Responsible for middleware
  *      7. app.listen
  *
+ *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * 🔹 What is app.use?
  *    - In ExpressJS, app.use() is a method to register middleware functions.
  *      • Middleware = functions that run before your route handlers (like /users, /login).
@@ -36,6 +37,13 @@
  * ✅ In short:
  *             - app.use is used to add middleware that runs before route handlers. It helps with logging, authentication, parsing, serving static files, error handling, etc.
  *
+ *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * 🔹 What is res.send()?
+ *    • res.send() is a response method in Express used to send data of any type (string, object, HTML, buffer, etc.) back to the client.
+ *    • It’s a general-purpose method — Express automatically detects the type of data you’re sending and sets the appropriate HTTP headers.
+ * 🔹 Syntax: res.send(body)
+ *                            • body → can be a string, object, array, or Buffer.
+ *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * 🔹 More about HTTP Methods, please visit first 0-HTTP-METHODS file in NodeJS Section
  */
 const express = require("express"); // Here, we're getting a function back from express

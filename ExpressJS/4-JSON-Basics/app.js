@@ -1,5 +1,5 @@
 const express = require("express");
-const { products, persons } = require("./data");
+const { products, persons } = require("../Common-Data/data");
 
 const app = express();
 
