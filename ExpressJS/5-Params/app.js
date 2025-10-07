@@ -2,8 +2,12 @@ const express = require("express");
 const { products } = require("../Common-Data/data");
 
 const app = express();
+/**
+ * 🔹 1. What are Route Params (req.params)?
+ *       • Params are part of the URL path — they are used when you want to identify or fetch a specific item (like a product, user, or post).
+ */
 
-// Home Route
+// Home Page Route
 app.get("/", (req, res) => {
   res.json("Home Page");
 });
@@ -14,6 +18,7 @@ app.get("/api/products", (req, res) => {
 });
 
 //---------------------------------------------------------------------------------------------HardCoded Params-----------------------------------------------------------------------------------------------------------------------------------------
+// using console.log(req) or console.log(req.params), we can see whole request object or specific data from request using dot property
 // 🔴 Hardcoded params for fetch specific product
 app.get("/api/products/1", (req, res) => {
   const singleProduct = products.map((product) => {
@@ -89,6 +94,12 @@ app.get("/api/products/:productId", (req, res) => {
   }
 
   return res.json(singleProductData);
+});
+
+// here we can see we can extend our endpoint by adding reviews that is fixed if we are trying to access by reivew then showing error, apart from this productId and reviewId is coming dynamically
+app.get("/api/products/:productId/reviews/:reviewId", (req, res) => {
+  console.log("request params = ", req.params);
+  res.send("Hello ExpressJS 😃");
 });
 
 app.listen(5000, () => {
