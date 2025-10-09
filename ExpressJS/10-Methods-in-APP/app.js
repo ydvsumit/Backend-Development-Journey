@@ -45,6 +45,17 @@ app.post("/login", (req, res) => {
   res.status(401).send("Please Provide Valid Credentials");
 });
 
+// 2. Using Postman Tool, we can insert data
+app.post("/api/postman/persons", (req, res) => {
+  const { name } = req.body;
+  if (!name) {
+    return res
+      .status(400)
+      .json({ success: false, msg: "Please provide name value" });
+  }
+  res.status(201).json({ success: true, data: [...persons, name] });
+});
+
 app.listen(5000, () => {
   console.log("Server is running on port: 5000");
 });
