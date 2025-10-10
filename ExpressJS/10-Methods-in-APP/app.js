@@ -56,6 +56,33 @@ app.post("/api/postman/persons", (req, res) => {
   res.status(201).json({ success: true, data: [...persons, name] });
 });
 
+// 3. PUT - update the data
+app.put("/api/persons/:id", (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  console.log(`id: ${id} & name: ${name}`);
+
+  const people = persons.find((person) => {
+    return person.id === Number(id);
+  });
+  console.dir(people, { depth: null });
+
+  if (!people) {
+    return res
+      .status(404)
+      .json({ success: false, msg: `no people found with id: ${id}` });
+  }
+
+  const newPeople = persons.map((person) => {
+    if (person.id === Number(id)) {
+      person.name = name;
+    }
+    return person;
+  });
+  res.status(200).json({ success: true, data: newPeople });
+});
+
 app.listen(5000, () => {
   console.log("Server is running on port: 5000");
 });
