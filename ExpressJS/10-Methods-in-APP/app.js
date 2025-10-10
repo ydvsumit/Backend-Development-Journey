@@ -83,6 +83,23 @@ app.put("/api/persons/:id", (req, res) => {
   res.status(200).json({ success: true, data: newPeople });
 });
 
+// 4. DELETE - delete a data
+app.delete("/api/persons/:id", (req, res) => {
+  const people = persons.find((person) => person.id === Number(req.params.id));
+
+  if (!people) {
+    return res.status(404).json({
+      success: false,
+      msg: `no people found with id: ${req.params.id}`,
+    });
+  }
+  const newPeople = persons.filter(
+    (person) => person.id !== Number(req.params.id)
+  );
+  res.status(200).json({ success: true, data: newPeople });
+});
+
+// listening server on port 5000
 app.listen(5000, () => {
   console.log("Server is running on port: 5000");
 });
