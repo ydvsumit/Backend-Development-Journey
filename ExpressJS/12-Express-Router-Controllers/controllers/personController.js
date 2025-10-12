@@ -1,15 +1,10 @@
-const express = require("express");
 const { persons } = require("../../Common-Data/data");
 
-const router = express.Router();
-
-// 1. Fetch the data
-router.get("/", (req, res) => {
+const getPerson = (req, res) => {
   res.status(200).json({ success: true, data: persons });
-});
+};
 
-// 2(a). Create a data
-router.post("/", (req, res) => {
+const createPerson = (req, res) => {
   const { name } = req.body;
   if (!name) {
     return res
@@ -17,10 +12,9 @@ router.post("/", (req, res) => {
       .json({ success: false, msg: "Please provide name value" });
   }
   res.status(201).json({ success: true, personName: name });
-});
+};
 
-// 2(b). Using Postman Tool, we can insert data
-router.post("/postman", (req, res) => {
+const createPostmanPerson = (req, res) => {
   const { name } = req.body;
   if (!name) {
     return res
@@ -28,10 +22,9 @@ router.post("/postman", (req, res) => {
       .json({ success: false, msg: "Please provide name value" });
   }
   res.status(201).json({ success: true, data: [...persons, name] });
-});
+};
 
-// 3. PUT - update the data
-router.put("/:id", (req, res) => {
+const updatePerson = (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
 
@@ -55,10 +48,9 @@ router.put("/:id", (req, res) => {
     return person;
   });
   res.status(200).json({ success: true, data: newPeople });
-});
+};
 
-// 4. DELETE - delete a data
-router.delete("/:id", (req, res) => {
+const deletePerson = (req, res) => {
   const people = persons.find((person) => person.id === Number(req.params.id));
 
   if (!people) {
@@ -71,6 +63,12 @@ router.delete("/:id", (req, res) => {
     (person) => person.id !== Number(req.params.id)
   );
   res.status(200).json({ success: true, data: newPeople });
-});
+};
 
-module.exports = router;
+module.exports = {
+  getPerson,
+  createPerson,
+  createPostmanPerson,
+  updatePerson,
+  deletePerson,
+};
