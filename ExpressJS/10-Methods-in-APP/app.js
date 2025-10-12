@@ -13,9 +13,37 @@ app.use(express.static("./method-public"));
 // urlencoded: This is a built-in middleware function in express. It parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.urlencoded({ extended: false }));
 
-// Parse JSON
+/**
+ * 🔹 What is express.json()?
+ *    - express.json() is a built-in middleware in ExpressJS that helps your app understand JSON data sent in the body of an HTTP request.
+ *
+ * In short —
+ *            👉 It parses incoming JSON data and makes it available in req.body.
+ *
+ * 🔹 Why do we need it?
+ *    - When a client (like Postman or a frontend app) sends data to the server using JSON format,
+ *      for example:
+ *                  {
+ *                    "name": "Sumit",
+ *                    "age": 23
+ *                  }
+ *      • By default, Express can’t read this JSON data.
+ *      • So we use express.json() middleware to parse it into a JavaScript object.
+ * 🔹 Syntax: app.use(express.json());
+ * 📌 You usually put it at the top of your app, before defining routes.
+ *
+ * 🔹 What it does internally
+ *    • Checks if the incoming request has a header Content-Type: application/json.
+ *    • If yes, it reads the JSON data from the body.
+ *    • Then it converts it into a JavaScript object and attaches it to req.body.
+ *
+ * ✅ In short:
+ *              express.json() is a middleware that helps Express read and understand JSON data sent by the client in HTTP requests (like POST or PUT)
+ *              Without it, req.body would be undefined.
+ */
 app.use(express.json());
 
+//-------------------------------------------------------Routes----------------------------------------------------------------------------------
 // Read Data
 app.get("/api/persons", (req, res) => {
   res.status(200).json({ success: true, data: persons });
