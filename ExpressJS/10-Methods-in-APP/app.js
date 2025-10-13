@@ -32,6 +32,9 @@ app.use(express.urlencoded({ extended: false }));
  * 🔹 Syntax: app.use(express.json());
  * 📌 You usually put it at the top of your app, before defining routes.
  *
+ * 🔴 Without express.json() :=> req.body → undefined ❌
+ * 🔴 With express.json() :=> req.body → { key: "value"} ✅
+ *
  * 🔹 What it does internally
  *    • Checks if the incoming request has a header Content-Type: application/json.
  *    • If yes, it reads the JSON data from the body.
@@ -53,6 +56,7 @@ app.get("/api/persons", (req, res) => {
 // Yes, we know that how to handle json data by using .json({}) But we are not handling the Incoming JSON Data.
 // And this is where another middleware comes into play, So I'm gonna say parse json here
 app.post("/api/persons", (req, res) => {
+  console.log(req.body); // now you can access JSON data by above middleware express.json()
   const { name } = req.body;
   if (!name) {
     return res
