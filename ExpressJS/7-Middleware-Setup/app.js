@@ -10,6 +10,10 @@
  *                    • “Middleware = a checkpoint between request and response.”
  * ⭐ Every request passes through one or more middleware functions before it gets a final response.
  *
+ * 🔹 Order of Middleware:
+ *    • Middleware functions run in the order they are defined in your code
+ *    • So always put global ones (like logging or express.json()) at the top.
+ *
  * ✅ In short:
  *              • Middleware in ExpressJS are functions that handle requests before they reach your routes or before sending the final response
  *              • They help with things like logging, authentication, data parsing, error handling, and security.
