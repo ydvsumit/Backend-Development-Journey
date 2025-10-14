@@ -45,10 +45,3 @@
   4. Enhanced data security: Structured data can be more easily secured than unstructured or semi-structured data, as access to the data can be controlled through database security protocols.
   5. Clear data lineage: Structured data typically has a clear lineage or history, making it easy to track changes and ensure data quality.
 
-# Spreadsheet (Basics for data understanding):
-  • Spreadsheet is a software to store the data in form of rows and columns. 
-  • We can store, arrange, calculate and sort the data. 
-  • We can use different formulas and functions in the stored data. 
-  • We can add more data in spreadsheet easily because we just need to insert more rows or columns only. 
-  • We can create, update and delete data within cells.
-  👉 For Examples of spreadsheets are Microsoft Excel, Google Sheets, and LibreOffice Calc.

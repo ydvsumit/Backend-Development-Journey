@@ -1,0 +1,39 @@
+# Database Languages:
+  - Database languages are specialized sets of commands and instructions used to define, manipulate and control data within a database. 
+  - Each language type plays a distinct role in database management, ensuring efficient storage, retrieval and security of data. 
+  - The primary database languages include:
+
+  1. Data Definition Language (DDL):
+     - DDL is the short name for Data Definition Language, which deals with database schemas and descriptions, of how the data should reside in the database.
+      • CREATE: to create a database and its objects like (table, index, views, store procedure, function and triggers)
+      • ALTER: alters the structure of the existing database
+      • DROP: delete objects from the database
+      • TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed
+      • COMMENT: add comments to the data dictionary
+      • RENAME: rename an object
+
+  2. Data Manipulation Language (DML):
+     - DML focuses on manipulating the data stored in the database, enabling users to retrieve, add, update and delete data.
+      • SELECT: retrieve data from a database
+      • INSERT: insert data into a table
+      • UPDATE: updates existing data within a table
+      • DELETE: Delete all records from a database table
+      • MERGE: UPSERT operation (insert or update)
+      • CALL: call a PL/SQL or Java subprogram
+      • EXPLAIN PLAN: interpretation of the data access path
+      • LOCK TABLE: concurrency Control
+
+  3. Data Control Language (DCL):
+     - DCL commands manage access permissions, ensuring data security by controlling who can perform certain actions on the database.
+      • GRANT: Provides specific privileges to a user (e.g., SELECT, INSERT).
+      • REVOKE: Removes previously granted permissions from a user.
+
+  4. Transaction Control Language (TCL):
+     - TCL commands oversee transactional data to maintain consistency, reliability and atomicity.
+      • ROLLBACK: Undoes changes made during a transaction.
+      • COMMIT: Saves all changes made during a transaction.
+      • SAVEPOINT: Sets a point within a transaction to which one can later roll back.
+
+  5. Data Query Language (DQL)
+     - DQL is a subset of DML, specifically focused on data retrieval.
+      • SELECT: The primary DQL command, used to query data from the database without altering its structure or contents.
