@@ -1,0 +1,10 @@
+# Understanding Data Types:
+  🌟 Text (String): Names, addresses, descriptions like "John Doe", or "Bangalore"
+  🌟 Numbers: Integers or decimals values like age 23 or price 99.99
+  🌟 Dates: Structural date values like birthdates, or transactional Dates
+  🌟 Data Errors: Mixing types can cause sorting or query errors in SQL
+
+# Practice Cleaning and Sorting Data / How you can structure your data ?:
+  🌟 Remove Duplicates: Delete repeated or incorrect entries for clarity.
+  🌟 Format Data: Correct date formats and consistent value styles.
+  🌟 Sort and Filter: Organize by columns and conditions like "paid orders".
