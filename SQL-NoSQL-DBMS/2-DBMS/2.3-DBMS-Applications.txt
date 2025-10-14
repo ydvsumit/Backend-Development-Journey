@@ -1,7 +1,10 @@
 # Applications of DBMS:
-  • Banking: Manages accounts and transactions.
+  • Banking: Manages accounts and transactions (We use DBMS to store information of customer details, accounts, loans, banking transactions, credit card transactions).
   • E-commerce: Tracks products, orders, and customers.
   • Healthcare: Stores patient records and diagnoses.
-  • Education: Handles student grades and schedules.
+  • Education: Handles student grades and schedules (We use DBMS to store students and staff information).
   • Social Media: Manages user profiles and interactions.
   • Data Science: Supports analytics and predictions.
+  
+  • Enterprise: We use DBMS to store information of sales, accounting, human resources, Manufacturing, online retailers.
+  • Airlines: We use DBMS to store information of reservations and schedules.

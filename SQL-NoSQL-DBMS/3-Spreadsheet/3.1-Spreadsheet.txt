@@ -1,0 +1,30 @@
+# Spreadsheet (Basics for data understanding):
+  • Spreadsheet is a software to store the data in form of rows and columns. 
+  • We can store, arrange, calculate and sort the data. 
+  • We can use different formulas and functions in the stored data. 
+  • We can add more data in spreadsheet easily because we just need to insert more rows or columns only. 
+  • We can create, update and delete data within cells.
+
+  👉 For Examples of spreadsheets are Microsoft Excel, Google Sheets, and LibreOffice Calc.
+
+# Features of Spreadsheets
+  - These are important features as given below:
+    • Cell-based structure: We organize data in the cells of rows and columns. We can store any type of data in these cells, like numbers and text. 
+    • Formulas and functions: Spreadsheet provide different built-in formulas and functions for calculations and data analysis.
+    • Data visualization: We can create charts, graphs, and tables to represent data visually.
+    • Conditional formatting: We can restrict any cell to accept data based on given condition. 
+    • Data filtering: We can filter and sort data to find and organize data. 
+
+# Types of Spreadsheets
+  - There are three main types of spreadsheets as given below:
+    • Personal spreadsheets: We use it for simple calculation and for personal use. Example is Google Sheets.
+    • Business spreadsheets: We use it for finance and accounting. Example is Microsoft Excel.
+    • Web-based spreadsheets: We use it for multiples user can access and edit the sheet online. 
+      👉  Examples are Google Sheets and Zoho Sheets.
+
+# Applications of Spreadsheet
+  - These are some uses of spreadsheets as given below:
+    • Personal use: We can use spreadsheet for personal use for tracking personal expenses, creating to-do lists and organizing information. 
+    • Project management: We can use spreadsheet to plan schedules, allocate resources and track project progress. 
+    • Data analysis: We can use spreadsheet for organizing and analyzing datasets in research and business.
+    • Finance: We can use spreadsheet to create budget plan and track expenses.
