@@ -28,3 +28,8 @@
     • Project management: We can use spreadsheet to plan schedules, allocate resources and track project progress. 
     • Data analysis: We can use spreadsheet for organizing and analyzing datasets in research and business.
     • Finance: We can use spreadsheet to create budget plan and track expenses.
+
+# (Example) Popular method in spreadsheet that used in Excel:
+  • Filtering: Show only rows matching conditions like country or status
+  • Sorting: Rearrange rows based on a column like age or date
+  • Formulas: Calculate totals and averages using simple functions
