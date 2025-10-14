@@ -1,0 +1,54 @@
+# Data : 
+        • Data is the raw material that can be processed for any computing machine. 
+        • Data is the raw fact stored in structured or unstructured formats.
+        👉 For example − Employee name, Product name, Name of the student, Marks of the student, Mobile number, Image etc.
+        ⭐ Note: In a DBMS, data is the raw, unorganized information stored in a database, such as text, numbers, images, or dates. 
+
+# Information: 
+              • It is a collection of data. 
+              • Information is the data that has been converted into more useful or intelligent form. 
+              • It is a processed form of data.
+              👉 For example: Report card sheet.
+
+# Structured Data (used in SQL):
+  • Structured data in SQL refers to data that is highly organized and formatted in a predefined manner, making it easily searchable, analyzable, manageable, readable and understandable by both humans and machines. 
+  • This type of data is typically stored in relational databases, which are managed using a Relational Database Management System (RDBMS) and accessed through Structured Query Language (SQL).
+  • This is achieved through a well-defined schema or data model, where data is stored in an orderly way such as rows and columns.
+  
+  ⭐Note:
+  🌟 Table: A collection of related data organized in rows and columns
+  🌟 Row (Record): A single data entry, like one customer or order.
+  🌟 Column (Field): A specific attribute such as Name, Email or Age.
+
+  👉 For Example: A customer database might contain structured records with fields like Name, Address, Phone Number, and Email.
+
+🔥 Characteristics of Structured Data:
+  • Data conforms to a data model and has easily identifiable structure
+  • Stored in tabular form (rows and columns), e.g., relational databases.
+  • Data is well organised so, Definition, Format and Meaning of data is explicitly known
+  • Data resides in fixed fields within a record or file
+  • Data elements are addressable, so efficient to analyse and process
+
+🔥 Common Sources of Structured Data:
+  • Relational Databases (e.g., MySQL, PostgreSQL)
+  • Spreadsheets (e.g., Excel, Google Sheets)
+  • OLTP Systems (Online Transaction Processing)
+  • Online forms and surveys
+  • IoT sensors (e.g., GPS, RFID tags)
+  • Web and server logs
+  • Medical monitoring devices
+
+🔥 Advantages of Structured Data:
+  1. Easy to understand and use: Structured data has a well-defined schema or data model, making it easy to understand and use. This allows for easy data retrieval, analysis, and reporting.
+  2. Consistency: The well-defined structure of structured data ensures consistency and accuracy in the data, making it easier to compare and analyze data across different sources.
+  3. Efficient storage and retrieval: Structured data is typically stored in relational databases, which are designed to efficiently store and retrieve large amounts of data. This makes it easy to access and process data quickly.
+  4. Enhanced data security: Structured data can be more easily secured than unstructured or semi-structured data, as access to the data can be controlled through database security protocols.
+  5. Clear data lineage: Structured data typically has a clear lineage or history, making it easy to track changes and ensure data quality.
+
+# Spreadsheet (Basics for data understanding):
+  • Spreadsheet is a software to store the data in form of rows and columns. 
+  • We can store, arrange, calculate and sort the data. 
+  • We can use different formulas and functions in the stored data. 
+  • We can add more data in spreadsheet easily because we just need to insert more rows or columns only. 
+  • We can create, update and delete data within cells.
+  👉 For Examples of spreadsheets are Microsoft Excel, Google Sheets, and LibreOffice Calc.
