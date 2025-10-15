@@ -108,6 +108,11 @@
      • They offer on-demand scalability, high availability, automatic backups and remote accessibility.
      • These databases can be relational (SQL) or non-relational (NoSQL) and are maintained by cloud service providers, reducing administrative overhead.
      • They support modern application requirements, including distributed access and real-time analytics.
-    
+  
     🌟 Example: Amazon RDS (for SQL), MongoDB Atlas (for NoSQL), Google BigQuery.
+
+  7. Centralized Database: A single database located at a single location. 
+
+  8. Distributed Database: A database where storage devices are not all attached to a common CPU, spreading data across multiple physical locations. 
+    
 

@@ -1,0 +1,15 @@
+# What is database ?
+  - A database is an organized collection of data that can be easily accessed, managed, and updated.
+
+    • Think of it like a digital filing cabinet.
+    • It stores information like customer names, emails, product orders, etc.
+
+  👉 Example: A store might store this data.
+
+  🔥 Database help keep this data organized and make it easy to search and manipulate.
+
+
+# How many types of databases ?
+  - There isn't a single, definitive number for database types, but they are generally categorized into two main families: 
+    • Relational (SQL) databases, which store data in structured tables, and 
+    • NoSQL (Non-Relational) databases, which handle unstructured or semi-structured data in more flexible formats. 

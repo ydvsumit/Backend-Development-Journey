@@ -1,0 +1,16 @@
+🔥 Relational vs Non-Relational Databases
+
+🦄 Relational Databases (SQL Based):
+    • Data is stored in tables (rows and columns)
+    • Tables can be related to each other using keys (like foreign keys)
+
+  👉 Example: MySQL, PostgreSQL, SQLite, SQL Server
+  👉 Use Case: Bank Records, E-Commerce Transactions, etc
+
+
+🔷 Non-Relational Database (NoSQL Based):
+    • Store data as documents, key-value pairs, graphs, etc.
+    • More flexible but less structured
+
+  👉 Example: MongoDB, Redis, Firebase
+  👉 Use Case: Real-time apps, chat apps, logging, JSON-based data
