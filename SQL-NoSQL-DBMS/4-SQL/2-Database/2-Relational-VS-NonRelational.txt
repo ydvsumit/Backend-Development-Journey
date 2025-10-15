@@ -14,3 +14,11 @@
 
   👉 Example: MongoDB, Redis, Firebase
   👉 Use Case: Real-time apps, chat apps, logging, JSON-based data
+
+  🚀 BONUS:
+  🚀 NoSQL Databases (Non-Relational): 
+      🔺 Store data in flexible formats, ideal for large volumes of unstructured or rapidly evolving data. 
+          📝 Document Databases: Store data as JSON-like documents, useful for content management. 
+          📝 Key-Value Databases: Store data as simple key-value pairs, known for fast read/write operations. 
+          📝 Wide-Column Stores: Store data in tables with rows and columns, but with a flexible schema where columns can vary per row. 
+          📝 Graph Databases: Store data as nodes and edges, excellent for modeling and querying complex relationships, such as in social networks. 
