@@ -2,8 +2,8 @@
   - A schema is like the blueprint of your database.
   🔥 It describes:
                 • Tables (like "Students", "Courses", "Teachers")
-                • Fields (columns in each table, like name, email, course_id)
-                • Relationships (how tables connect to each other)
+                  • Fields (columns in each table, like name, email, course_id)
+                  • Relationships (how tables connect to each other)
                 • Think of it like a map that tells the database how your data is organized.
 
 
