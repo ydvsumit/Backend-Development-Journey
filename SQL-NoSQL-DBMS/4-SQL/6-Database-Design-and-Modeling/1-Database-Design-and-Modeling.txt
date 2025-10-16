@@ -12,3 +12,7 @@
           • easy updation, 
           • well stuctured relation databse and 
           • scalable
+
+
+🔸 But before proceeding we need to know about:
+   1. Database Normalization

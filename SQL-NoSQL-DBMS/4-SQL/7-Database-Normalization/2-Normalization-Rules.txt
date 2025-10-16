@@ -1,0 +1,136 @@
+🔥 How we can achieve the Normalization in Database ?
+👉 To achieve normalization in a database, we follow a step-by-step process known as “normal forms” — each step makes the database cleaner and more organized.
+
+
+♦️ Let’s go through it in simple words 👇
+-----------------------------------------------------------------------------------------------------
+📌 Step 1: Start with one big unorganized table
+
+Example (un-normalized table):
+-------------------------------------------------------------------------------------
+|   StudentID	    |     Name      | 	Course1	    |     Course2	      |   Teacher   |
+-------------------------------------------------------------------------------------
+|       1	        |     John      |   	Math      |	    Science	      |   Mr. Lee   |
+-------------------------------------------------------------------------------------
+|       2	        |     Mary      |   	Math      |	    NULL	        |   Mr. Lee   |
+-------------------------------------------------------------------------------------
+👉 This table has repeated and mixed data (courses, teachers all in one place).
+
+
+-----------------------------------------------------------------------------------------------------
+📌 Step 2: Apply 1st Normal Form (1NF):
+
+🚩 Rule:
+        • Each column should have only one value (no multiple or repeating groups).
+
+✅ Fix:
+        • Split repeating columns like Course1, Course2 into separate rows.
+-------------------------------------------------------------------------
+|    StudentID	  |     Name	      |   Course	      |     Teacher     |
+-------------------------------------------------------------------------
+|       1	        |     John      	|   Math          |     Mr. Lee     |
+-------------------------------------------------------------------------
+|       1	        |     John      	|   Science       |     Mr. Lee     |
+-------------------------------------------------------------------------
+|       2	        |     Mary      	|   Math          |     Mr. Lee     |
+-------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------
+📌 Step 3: Apply 2nd Normal Form (2NF)
+
+🚩Rule:
+        • Data should depend on the whole primary key, not part of it.
+        • Remove partial dependencies.
+
+✅ Fix:
+        • Split the table into two — one for students, one for courses.
+
+👉Students Table:
+-----------------------------------
+|   StudentID	    |     Name      |
+-----------------------------------
+|       1	        |     John      |
+-----------------------------------
+|       2	        |     Mary      |
+-----------------------------------
+
+👉Courses Table:
+-----------------------------------
+|    Course	      |     Teacher   |
+-----------------------------------
+|     Math	      |     Mr. Lee   |
+-----------------------------------
+|     Science	    |     Mr. Lee   |
+-----------------------------------
+
+👉StudentCourses Table (link between both):
+---------------------------------------
+|   StudentID	    |     Course        |
+---------------------------------------
+|       1	        |     Math          |
+---------------------------------------
+|       1	        |     Science       |
+---------------------------------------
+|       2	        |     Math          |
+---------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------------
+📌 Step 4: Apply 3rd Normal Form (3NF)
+
+🚩Rule:
+        • No column should depend on another non-key column.
+        • Remove transitive dependencies.
+
+✅ Fix:
+        • If the teacher name depends on the course, move teachers to a separate table.
+
+👉Courses Table:
+-------------------------------------
+|     CourseID	  |   CourseName    |
+-------------------------------------
+|         1	      |     Math        |
+-------------------------------------
+|         2	      |     Science     |
+-------------------------------------
+
+
+👉Teachers Table:
+---------------------------------------
+|     TeacherID	    |   TeacherName   |
+---------------------------------------
+|         1	        |     Mr. Lee     |
+---------------------------------------
+
+👉CourseTeacher Table:
+-----------------------------------
+|     CourseID	|   TeacherID     |
+-----------------------------------
+|         1	    |      1          |
+-----------------------------------
+|         2	    |      1          |
+-----------------------------------
+
+-----------------------------------------------------------------------------------------------------
+
+✅ Final Result:
+You now have small, related tables:
+                                    • Students
+                                    • Courses
+                                    • Teachers
+                                    • StudentCourses
+                                    • CourseTeacher
+Each stores unique data, and they are linked using IDs (relationships).
+
+
+-----------------------------------------------------------------------------------------------------
+
+💡 In short:
+You can achieve normalization by:
+                                  1. Removing repeating data (1NF)
+                                  2. Splitting data based on full keys (2NF)
+                                  3. Separating data that depends on non-key columns (3NF)
+
+👉 After these steps, your database becomes organized, consistent, and easier to manage.

@@ -1,0 +1,73 @@
+🔥 Database Normalization:
+   • Normalization is the process of organization data to reduce redundancy and improve data integrity.
+   OR
+   • Database normalization means organizing data in a database in a clean and efficient way — so there is no duplicate data and everything is stored logically.
+   
+   👉 In simple words:
+      • Normalization is like tidying up your data so it’s easy to manage, less repetitive, and doesn’t cause confusion when data changes.
+
+
+🧠 Benefits of normalization:
+                              • Removes duplicate data
+                              • Keeps data consistent
+                              • Makes database smaller and faster
+                              • Easier to update and maintain
+
+✅ In short:
+    - Database normalization = arranging data into related tables to reduce redundancy (repetition) and improve data integrity.
+
+🔸 Why Normalize a Database ?
+👉 Understanding Anomalies (inconsistency) in Database Design
+
+
+🔥 Example:
+Imagine you have this messy table:
+-----------------------------------------------------------------------------
+|     StudentID	       |      Name	     |       Course1     |   	Course2   |
+-----------------------------------------------------------------------------
+|       1	             |      John	     |        Math	     |    Science   |
+-----------------------------------------------------------------------------
+|       2	             |      Mary	     |        Math	     |    NULL      |
+-----------------------------------------------------------------------------
+
+👉 Here, courses are stored inside the same table — repeated and hard to manage.
+   If a course name changes, you have to update it in many places.
+----------------------------------------------------------------------------------
+
+📌 After normalization, you split the data into separate tables:
+
+♦️ Students Table:
+-----------------------------------
+|     StudentID     |     Name    |
+-----------------------------------
+|       1           |   	John    |
+-----------------------------------
+|       2           |   	Mary    |
+-----------------------------------
+
+
+----------------------------------------------------------------------------------
+
+♦️ Courses Table:
+---------------------------------------------
+|     CourseID	      |     CourseName      |
+---------------------------------------------
+|       1	            |     Math            |
+---------------------------------------------
+|       2	            |     Science         |
+---------------------------------------------
+
+----------------------------------------------------------------------------------
+
+♦️ StudentCourses Table (linking students and courses):
+---------------------------------------
+|     StudentID	     |    CourseID    |
+---------------------------------------
+|         1	         |      1         |
+---------------------------------------
+|         1	         |      2         |
+---------------------------------------
+|         2	         |      1         |
+---------------------------------------
+
+📌 Now, if you change the course name, it updates in just one place ✅
