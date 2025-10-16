@@ -1,0 +1,29 @@
+🔷 What is SCHEMA ?
+  - A schema is like the blueprint of your database.
+  🔥 It describes:
+                • Tables (like "Students", "Courses", "Teachers")
+                • Fields (columns in each table, like name, email, course_id)
+                • Relationships (how tables connect to each other)
+                • Think of it like a map that tells the database how your data is organized.
+
+
+🔷 What is SCHEMA in SQL ?
+    🔸 In SQL: 
+              • You can create a schema using: CREATE SCHEMA university;
+              • This will create a new namespace (like a folder) in your database where you can store related tables.
+
+    🔸 In PostgreSQL:
+                     • A schema is a namespace inside a database.
+                     • You can have multiple schemas in the same database.
+
+                     • Example: A university schema could have:
+                          • students table
+                          • courses table
+                          • teachers table
+
+                     • This helps keep things organized - like having multiple folders inside the same drive.
+
+💠 Simple Analogy:
+  📂 Database = your computer's hard drive
+  📂 Schema   = a folder
+  📂 Tables   = files inside the folder
