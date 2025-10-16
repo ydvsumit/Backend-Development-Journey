@@ -1,0 +1,14 @@
+🤔 In real wold application, from where more bugs comes, 
+        • is it  from system failure,
+        • is it from server handling, etc.
+    👉 that is incorrect
+
+🔹 The correct answer is:
+                          • Databse Design and 
+                          • Modeling 
+
+    👉 because it's play important role to scale any application, and also our databse design should follow:
+          • where no duplicacy found, 
+          • easy updation, 
+          • well stuctured relation databse and 
+          • scalable
