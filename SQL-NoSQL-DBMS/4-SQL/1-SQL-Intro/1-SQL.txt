@@ -1,5 +1,5 @@
 # SQL stands for Structured Query Language.
-  • It’s a standard language used to communicate with databases.
+  • It’s a standard language used to communicate with relational databases.
   
   ⭐ You can use SQL to:
       • 📥 Store data in a database
