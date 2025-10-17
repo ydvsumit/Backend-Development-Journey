@@ -1,0 +1,76 @@
+🔑 1. Primary Key:
+                  • A Primary Key is a unique identifier for each record (row) in a table.
+                  • It makes sure no two rows are the same and every row can be uniquely found.
+
+📘 Rules:
+          • It must be unique (no duplicates)
+          • It cannot be NULL (must have a value)
+
+📊 Example:
+---------------------------------------------------
+|   StudentID     |     name    |       Age       |
+---------------------------------------------------
+|       1         |     John    |       20        |
+---------------------------------------------------
+|       2         |     Mary    |       22        |
+---------------------------------------------------
+
+👉 Here, StudentID is the Primary Key — each student has a unique ID.
+
+✅ Think of it like: Your Aadhar number or Roll number — unique to you.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+🔐 2. Composite Key:
+
+A Composite Key is a combination of two or more columns that together make a unique identifier for each record.
+
+📊 Example:
+---------------------------------------------
+|   StudentID	  | CourseID    |   Grade     |
+---------------------------------------------
+|       1       |     101     |     A       |
+---------------------------------------------
+|       1       |     102     |     B       |
+---------------------------------------------
+|       2       |     101     |     A       |
+---------------------------------------------
+
+👉 Here, neither StudentID nor CourseID alone is unique —
+   but together (StudentID + CourseID) form a Composite Key.
+
+✅ Think of it like: A combination of two pieces of information (e.g., “student + course”) that makes a record unique.
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+🔗 3. Foreign Key:
+
+• A Foreign Key is used to link two tables together.
+• It is a column that refers to the Primary Key of another table.
+
+📊 Example:
+
+Students Table:
+---------------------------------
+|   StudentID	  |     Name      |
+---------------------------------
+|     1         |     John      |
+---------------------------------
+|     2         |     Mary      |
+---------------------------------
+
+Enrollments Table:
+-----------------------------------------------
+|   EnrollmentID  |	StudentID   |   Course    |
+-----------------------------------------------
+|       101       |   1         |   Math      |
+-----------------------------------------------
+|       102       |   2         |   Science   |
+-----------------------------------------------
+
+👉 Here, StudentID in the Enrollments table is a Foreign Key —
+   it points to StudentID in the Students table.
+
+✅ Think of it like: A reference or link — it connects data between tables.
