@@ -1,0 +1,53 @@
+📌 What is ER Diagram ?
+👉 ER Diagram stands for Entity-Relationship Diagram.
+👉 In simple words, an ER diagram is a picture (or visual map) that shows how data is organized and how different pieces of data (tables) are connected to each other in a database.
+
+It helps you plan and understand the structure of your database before you actually create it.
+
+
+📍 Main parts of an ER Diagram:
+
+1. Entity → represents a real-world object or thing.
+            • Example: Student, Teacher, Course, Department
+            • In diagrams, entities are shown as rectangles.
+
+2. Attribute → details or properties of an entity.
+                • Example: For a Student → StudentID, Name, Age
+                • In diagrams, attributes are shown as ovals connected to entities.
+
+3. Relationship → shows how entities are linked or related.
+                  🔹 Example:
+                              • A Student “enrolls in” a Course
+                              • A Teacher “teaches” a Course
+                  🔹 In diagrams, relationships are shown as diamonds.
+
+📊 Example:
+Let’s say we have:
+                  • Entity: Student
+                  • Entity: Course
+                  • Relationship: Enrolls
+
+Then your ER diagram looks like this (visually):
+                                                  [STUDENT] ---- (ENROLLS) ---- [COURSE]
+Attributes:
+          STUDENT: StudentID, Name, Age
+          COURSE: CourseID, CourseName
+
+
+🔗 Types of Relationships:
+
+• One-to-One (1:1) → Each entity in A relates to one in B
+                   → Example: One person → one passport
+
+• One-to-Many (1:N) → One entity in A relates to many in B
+                    → Example: One teacher → many students
+
+• Many-to-Many (M:N) → Many in A relate to many in B
+                     → Example: Students ↔ Courses
+
+
+💡 In short:
+            • ER Diagram = blueprint of your database.
+            • It shows what data you have (entities), what details they include (attributes), and how they connect (relationships).
+
+✅ Think of it like: a map or plan you draw before building your database tables.

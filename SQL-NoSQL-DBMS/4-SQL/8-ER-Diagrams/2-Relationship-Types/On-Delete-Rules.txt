@@ -1,0 +1,72 @@
+📌 What is On-Delete Rules ?
+👉 On-Delete rules (also called ON DELETE actions) are rules in SQL that tell the database what to do with related data when a record is deleted from a parent table.
+
+👉 In simple words:
+                    ── They define how the database should handle child records when the parent record they depend on is removed.
+
+
+🔸 Example:
+Let’s say we have two tables:
+
+👉1. Students Table (Parent):
+-------------------------------
+|   StudentID   |     Name    |
+-------------------------------
+|       1	      |     John    |
+-------------------------------
+|       2	      |     Mary    |
+-------------------------------
+
+
+👉2. Enrollments Table (Child)
+-------------------------------------------------
+|   EnrollmentID  |   StudentID   |    Course   |
+-------------------------------------------------
+|       101	      |       1       |     Math    |
+-------------------------------------------------
+|       102	      |       2       |     Science |
+-------------------------------------------------
+
+📍 Here, Enrollments.StudentID is a foreign key referring to Students.StudentID.
+
+
+⚙️ Common ON DELETE Rules:
+
+1. ON DELETE CASCADE:
+                      • If a student is deleted, all their related enrollments are also deleted.
+                      ✅ Example: Delete John → all his enrollment records (Math) are also deleted automatically.
+
+2. ON DELETE SET NULL:
+                      • When the parent row is deleted, the foreign key in the child becomes NULL.
+                      ✅ Example: Delete John → his enrollments remain, but StudentID becomes NULL.
+
+3. ON DELETE RESTRICT:
+                      • Prevents deletion of the parent if child records exist.
+                      ✅ Example: You cannot delete John until his enrollments are deleted first.
+
+4. ON DELETE NO ACTION:
+                        • Similar to RESTRICT — the database takes no automatic action,
+                          but will give an error if a related child still exists.
+                    
+5. ON DELETE SET DEFAULT:
+                          • When the parent row is deleted, the child’s foreign key is set to a default value (if defined).
+
+
+💡 In short:
+---------------------------------------------------------------
+|     Rule        |   What Happens When Parent is Deleted     |
+---------------------------------------------------------------
+|   CASCADE       |   Delete related child rows               |
+---------------------------------------------------------------
+|   SET NULL      |   Set foreign key to NULL                 |
+---------------------------------------------------------------
+|   RESTRICT      |   Stop deletion if child exists           |
+---------------------------------------------------------------
+|   NO ACTION     |   Same as restrict (no automatic change)  |
+---------------------------------------------------------------
+|   SET DEFAULT   |   Set child foreign key to default value  |
+---------------------------------------------------------------
+
+
+✅ Simple summary:
+ON DELETE rules tell the database how to handle related data when the main (parent) record is deleted — either delete, keep, or nullify the child records.
