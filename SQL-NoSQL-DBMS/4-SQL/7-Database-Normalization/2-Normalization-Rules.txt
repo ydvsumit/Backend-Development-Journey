@@ -151,7 +151,7 @@ A table is in BCNF if:
 
 📊 Example (to understand easily):
 
-Before BCNF:
+👉Before BCNF:
 -----------------------------------------
 |  Teacher   |	Subject   |  Department |
 -----------------------------------------
@@ -162,23 +162,23 @@ Before BCNF:
 |  John      |	Physics	  |    Science  |
 -----------------------------------------
 
-Here:
+👉 Here:
         • One Teacher can teach multiple subjects.
         • Each Teacher belongs to one Department.
 
-So, we have these dependencies:
+👉 So, we have these dependencies:
         • Teacher → Departmen
         • Teacher + Subject → unique row
 
-Here, Teacher alone is not a candidate key (because one teacher can teach multiple subjects).
-That means the first rule (Teacher → Department) breaks BCNF.
+✨ Here, Teacher alone is not a candidate key (because one teacher can teach multiple subjects).
+   That means the first rule (Teacher → Department) breaks BCNF.
 
 
 ✅ After applying BCNF:
 
 We split the table into two:
 
-Teacher Table:
+👉Teacher Table:
 ---------------------------------
 |  Teacher  |	Department      |
 ---------------------------------
@@ -188,7 +188,7 @@ Teacher Table:
 ---------------------------------
 
 
-Teaching Table:
+👉Teaching Table:
 ---------------------------------
 |  Teacher   |  Subject         |
 ---------------------------------
