@@ -1,0 +1,72 @@
+🔥 What is mean of Remove transitive dependencies ?
+💡 Meaning: 
+          transitive dependency means one column depends on another non-key column, instead of depending directly on the primary key.
+
+👉 So when we say “remove transitive dependencies”, it means:
+    • Make sure that non-key columns depend only on the primary key, not on other non-key columns.
+
+
+📌 Example (Before removing transitive dependency):
+-----------------------------------------------------------------------
+|   StudentID | StudentName   |   DepartmentID  |   DepartmentName    |
+-----------------------------------------------------------------------
+|       1     |   John        |       D1        |   Computer Science  |
+-----------------------------------------------------------------------
+|       2     |   Mary        |       D2        |   Electrical        |
+-----------------------------------------------------------------------
+|       3     |   Sam         |       D1        |   Computer Science  |
+-----------------------------------------------------------------------
+
+👉 Primary key: StudentID
+
+Now check dependencies:
+                      • StudentID → DepartmentID ✅ (good — depends on key)
+                      • But also, DepartmentID → DepartmentName ❌ (depends on another non-key column)
+
+That second one is a transitive dependency —
+                                            • DepartmentName depends indirectly on StudentID through DepartmentID.
+
+
+📌 Fix (After removing transitive dependency):
+
+We split the table into two:
+
+👉Students Table:
+-----------------------------------------------------
+|   StudentID   |   StudentName   |   DepartmentID  |
+-----------------------------------------------------
+|       1       |       John      |       D1        |
+-----------------------------------------------------
+|       2       |       Mary      |       D2        |
+-----------------------------------------------------
+|       3       |       Sam       |       D1        |
+-----------------------------------------------------
+
+
+👉Departments Table:
+-----------------------------------------
+| DepartmentID    |   DepartmentName    |
+-----------------------------------------
+|     D1          |   Computer Science  |
+-----------------------------------------
+|     D2          |   Electrical        |
+-----------------------------------------
+
+Now:
+    • In Students, all columns depend only on StudentID.
+    • In Departments, DepartmentName depends only on DepartmentID.
+
+✅ No transitive dependency now.
+
+
+🧠 In short:
+            • A transitive dependency = column depends on another non-key column.
+            • To remove it, separate the table into smaller tables so that each column depends only on the primary key.
+
+
+✅ Simple Example Analogy:
+Imagine:
+        • Your Roll Number identifies you.
+        • But your Teacher Name depends on your Subject, not on your Roll Number directly.
+          → That’s a transitive dependency.
+          So, we move “Subject → Teacher” info to another table.
