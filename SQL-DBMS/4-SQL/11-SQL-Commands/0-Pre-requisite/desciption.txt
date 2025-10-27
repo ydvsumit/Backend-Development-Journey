@@ -1,0 +1,94 @@
+🔥 SQL Command:
+👉 SQL Basic Commands are the core statements used to work with data in a database — like creating tables, inserting data, updating, deleting, and fetching it.
+👉 In simple words, these are the main actions you perform on a database using SQL. 
+
+💡 SQL Commands are grouped into 5 main types:
+
+🔎 1. DDL (Data Definition Language) – defines the structure of the database:
+   🔹 These commands are used to create, change, or remove tables and databases.
+  -----------------------------------------------------------------------------------------------------------------------------
+  |   Command       |   Meaning                                       |   Example                                             |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | CREATE	        | Creates a new table or database	                | sql CREATE TABLE Students (ID INT, Name VARCHAR(50)); |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | ALTER           | Changes the structure of an existing table      | sql ALTER TABLE Students ADD Age INT;                 | 
+  |                 | (add/remove columns)	                          |                                                       |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | DROP            | Deletes a table or database permanently	        | sql DROP TABLE Students;                              |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | TRUNCATE        | Deletes all data from a table but keeps its structure | sql TRUNCATE TABLE Students;                    |
+  -----------------------------------------------------------------------------------------------------------------------------
+
+
+
+💾 2. DML (Data Manipulation Language) – manages data inside tables:
+   🔹 These commands are used to add, update, or remove data in tables.
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  |   Command       |   Meaning                                       |   Example                                                         |
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  | INSERT	        | Adds new data into a table    	                | sql INSERT INTO Students (ID, Name, Age) VALUES (1, 'John', 20);  |
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  | UPDATE          | Changes existing data                           | sql UPDATE Students SET Age = 21 WHERE ID = 1;                    |
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  | DELETE          | Removes data from a table                       | sql DELETE FROM Students WHERE ID = 1;                            |
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+🔍 3. DQL (Data Query Language) – used to fetch data:
+  -----------------------------------------------------------------------------------------------------------------------------
+  |   Command       |   Meaning                                       |   Example                                             |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | SELECT	        | Retrieves data from tables                      | sql SELECT * FROM Students;                           |
+  -----------------------------------------------------------------------------------------------------------------------------
+
+  📘 Example output:
+  -----------------------------------------------------------------------------------------------------------------------------
+  | ID              | Name                                            |     Age                                               |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | 1               | John                                            |     20                                                |
+  -----------------------------------------------------------------------------------------------------------------------------
+
+
+
+🔒 4. DCL (Data Control Language) – controls user access and permissions
+  -----------------------------------------------------------------------------------------------------------------------------
+  |   Command       |   Meaning                                       |   Example                                             |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | GRANT           | Gives user access rights                        | sql GRANT SELECT ON Students TO user1;                |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | REVOKE          | Removes user access rights                      | sql REVOKE SELECT ON Students FROM user1;             | 
+  -----------------------------------------------------------------------------------------------------------------------------
+
+
+
+🔁 5. TCL (Transaction Control Language) – manages transactions (save or undo changes)
+
+  -----------------------------------------------------------------------------------------------------------------------------
+  |   Command       |   Meaning                                       |   Example                                             |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | COMMIT	        | Saves all changes made                          | sql COMMIT;                                           |
+  -----------------------------------------------------------------------------------------------------------------------------
+  | ROLLBACK        | Cancels recent changes                          | sql ROLLBACK;                                         | 
+  -----------------------------------------------------------------------------------------------------------------------------
+  | SAVEPOINT       | Sets a temporary point to rollback to           | sql SAVEPOINT sp1;                                    |
+  -----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+✅ In short:
+-----------------------------------------------------------------------------
+| Type    | Purpose                          | Example                      |
+| ------- | -------------------------------- | ---------------------------- |
+| DDL     | Create or change table structure | CREATE TABLE                 |
+| DML     | Add, edit, or delete data        | INSERT, UPDATE, DELETE       |
+| DQL     | Fetch data                       | SELECT                       |
+| DCL     | Manage user permissions          | GRANT, REVOKE                |
+| TCL     | Control transactions             | COMMIT, ROLLBACK             |
+-----------------------------------------------------------------------------
+
+
+💬 Simple summary:
+SQL Commands are like the building blocks of database operations —
+they help you create tables, insert and manage data, fetch information, and control who can access it.
