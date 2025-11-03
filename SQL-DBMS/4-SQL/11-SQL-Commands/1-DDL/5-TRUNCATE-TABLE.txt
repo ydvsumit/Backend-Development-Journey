@@ -1,0 +1,43 @@
+🔥 TRUNCATE:
+👉 In SQL, the TRUNCATE command belongs to DDL (Data Definition Language), and it is used to remove all rows (data) from a table very quickly, 
+    but keeps the table structure so you can use it again.
+
+
+💡 In simple words:
+TRUNCATE = “Delete everything inside the table, but keep the empty table ready to use.”
+
+
+📊 Example:
+
+Before:
+| id | name | marks |
+| -- | ---- | ----- |
+| 1  | John | 85    |
+| 2  | Mary | 90    |
+
+
+Command:
+TRUNCATE TABLE students;
+
+
+After:
+| id        | name | marks |
+| --------- | ---- | ----- |
+| (no rows) |      |       |
+
+
+✅ Table still exists, but it’s empty now.
+
+
+⚙️ Key Points:
+              • It removes all data instantly (faster than DELETE).
+              • It does not log each row deletion individually → that’s why it’s fast.
+              • It resets auto-increment values (e.g., ID starts again from 1).
+              • You can’t use WHERE with TRUNCATE (it deletes everything).
+              • Once executed, you can’t ROLLBACK (undo) it — in most databases.
+
+
+✅ In short:
+
+TRUNCATE quickly empties a table but keeps its structure for future use —
+like clearing all pages of a notebook but keeping the notebook itself.
