@@ -21,3 +21,12 @@ rl.question(`What's your name? \n`, (name) => {
   console.log(`Hi ${name}!`);
   rl.close();
 });
+
+// Taking continuosly input in terminal and showing instantly there
+
+/*
+rl.question(`What's your name? \n`, (name) => {
+  console.log(`Hi ${name}!`);
+  rl.close();
+});
+*/
