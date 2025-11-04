@@ -4,7 +4,7 @@
  * These are called global objects (or simply "globals").
  * 👉 Think of them as built-in helpers that Node.js provides by default.
  *
- * globals: In NodeJS, variables declared inside a file are not added to the global scope
+ * globals: In NodeJS, variables declared inside a file are not added to the global scope (This behavior differs from browser-based JavaScript, where variables declared with var in the global scope are attached to the window object and are accessible globally.)
  *
  * __dirname -> return the absolute path of current directory
  * __filename -> retrun the absolute path of current file (including filename)
