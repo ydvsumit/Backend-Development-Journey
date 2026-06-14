@@ -1,3 +1,5 @@
+-- Student Table already created previously under university database that are going to be used further
+
 -- Classes Table (with teacher included)
 CREATE TABLE classes (
 	id INT PRIMARY KEY,
