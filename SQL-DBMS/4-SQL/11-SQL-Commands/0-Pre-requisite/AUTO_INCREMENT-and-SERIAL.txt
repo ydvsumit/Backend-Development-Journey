@@ -1,0 +1,48 @@
+💡 What is AUTO_INCREMENT and SERIAL ? Why it's used and How it's impact on database ?
+
+👉 Both AUTO_INCREMENT and SERIAL do the exact same job: 
+👉 they automatically generate a unique, sequential number (like 1, 2, 3, 4...) every time you add a new row to a table.
+✅ The only real difference is the SQL database brand you are using:
+          • AUTO_INCREMENT is used in MySQL and MariaDB.
+          • SERIAL is used in PostgreSQL.
+
+❓ Why It Is Used & What Its Purpose Is
+👉 When creating a table, every row needs a Primary Key—a totally unique ID that prevents rows from getting mixed up. 
+👉 Manually assigning these IDs is difficult. If you have millions of users, you cannot easily remember if the last ID used was 4,561,232 or 4,561,233.
+👉 The purpose of these keywords is to delegate that job to the database. You just insert the data (like a user's name and email), and the database automatically stamps it with the next number in line.
+
+
+🛠️ Visualizing How It Works
+👉 Imagine you are at a busy bakery and you pull a paper number from a ticket dispenser.
+	• The database is the ticket dispenser.
+	• Every new customer (row) automatically gets the next number in order.
+	• No two customers can ever hold the same number.
+
+🔥 Example:
+
+/* MySQL Example */
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+/* PostgreSQL Example */
+CREATE TABLE Users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+
+🔹 When you insert data, you completely skip the id column:
+👉 INSERT INTO Users (name) VALUES ('Alice'), ('Bob'), ('Charlie');
+👉 The database automatically generates the IDs behind the scenes:
+		• Row 1: 1, Alice
+		• Row 2: 2, Bob
+		• Row 3: 3, Charlie
+
+
+💥 How It Impacts Your Database
+Using an automatic numbering system impacts your database in three major ways:
+🔹 Guaranteed Uniqueness: It completely eliminates human error. You will never accidentally try to create two users with the ID 5.
+🔹 Gaps Will Happen: If you insert a row and it gets ID 4, but you immediately delete it, that number 4 is gone forever. The next row you add will be ID 5. Your IDs might look like 1, 2, 3, 5, 6. This is normal behavior and perfectly fine.
+🔹 Super-Fast Searching: Computers process integers (numbers) incredibly fast. By making your primary key a sequential number, the database can search, sort, and INNER JOIN tables together at lightning speed.
