@@ -32,6 +32,8 @@ CREATE TABLE Users (
     name VARCHAR(50)
 );
 
+💡 if we use INT with SERIAL then it will fail due to a syntax error: you cannot combine INT and SERIAL together. WHY ?
+👉 In PostgreSQL, SERIAL is not a modifier; it is its own pseudo-data type that automatically creates an auto-incrementing integer. Therefore, using INT SERIAL will cause your database parser to crash.
 
 🔹 When you insert data, you completely skip the id column:
 👉 INSERT INTO Users (name) VALUES ('Alice'), ('Bob'), ('Charlie');
